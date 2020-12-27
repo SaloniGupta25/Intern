@@ -1,0 +1,43 @@
+
+
+
+<!--<div>-->
+<!--    {% block head %}-->
+<!--<h3>Profile</h3>-->
+<!--{% endblock %}-->
+
+<!--<form method="post" enctype="multipart/form-data">-->
+<!--   {{user}}<br>-->
+<!--    Name:{{user.username}}<br>-->
+<!--    Firstname:{{user.first_name}}<br>-->
+<!--    Lastname:{{user.last_name}}<br>-->
+<!--    Email:{{user.email}}<br>-->
+
+<!--</div>-->
+<!--</form>-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hotel_image</title>
+</head>
+<body>
+    <form method = "post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+         {{user}}<br>
+        Name:{{user.username}}<br>
+        Firstname:{{user.first_name}}<br>
+        Lastname:{{user.last_name}}<br>
+        Email:{{user.email}}<br>
+
+        profile: <button type="submit">Upload</button>
+
+    </form>
+</body>
+</html>
+
+
+

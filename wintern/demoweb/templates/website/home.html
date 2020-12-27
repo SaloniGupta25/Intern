@@ -1,0 +1,14 @@
+<div>
+ {% include 'website/base.html' %}
+</div>
+<div>
+
+
+<h1> Post</h1>
+<ul>
+  {% for post in object_list %}
+    <h2>{{ post.title }}</h2>
+    <img src="{{ post.cover.url}}" height="60%" width="50%" alt="{{ post.title }}">
+  {% endfor %}
+</ul>
+    </div>

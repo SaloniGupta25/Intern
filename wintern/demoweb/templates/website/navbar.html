@@ -1,0 +1,36 @@
+{% load static %}
+
+
+<style>
+  .hello-msg{
+    font-size: 18px;
+    color: #fff;
+    margin-right: 20px;
+  }
+</style>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ml-auto">
+      {% if request.user.is_authenticated %}
+     <li class="nav-item active">
+        <a class="nav-link" href="{% url 'image_upload' %}">Profile</a>
+          <span class="hello-msg">Hello, {{request.user}}</span>
+          <a  class="hello-msg " href="{% url 'logout' %}">Logout</a>
+         <a class="nav-link" href="{% url 'add_post' %}">New post</a>
+
+      </li>
+        {% else %}
+            <a class="nav-item nav-link" href="{% url 'login' %}" aria-label="Login">
+              <span><a class="hello-msg" href="{% url 'login' %}">Login</a></span>
+         <a class="nav-item nav-link" href="{% url 'login' %}" aria-label="Login">
+              <span><a class="hello-msg" href="{% url 'register' %}">Signup</a></span>
+          {% endif %}
+    </ul>
+  </div>
+</nav>
